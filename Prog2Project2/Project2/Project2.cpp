@@ -76,8 +76,12 @@ int main() {
     Img nine = reversechannel(layer_red, layer_blue, layer_green);
     nine.write("output/part9.tga");
 
-//Part ten
-    Img ten = 
+//Part ten;
+    Img ten = flipper(text2);
+    ten.write("output/part10.tga");
+    
+//Extra Credit
+
 
     return 0;
 }

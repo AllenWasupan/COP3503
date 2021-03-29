@@ -53,7 +53,7 @@ private:
 public:
 
 	void Load(string filename) {
-
+		 
 		ifstream file(filename, ios_base::binary);
 
 		if (file.is_open()) {
@@ -351,23 +351,36 @@ Img Overblend(Img& a, Img& b) {
 	for (uint i = 0; i < avec.size(); i++) {
 		//Makes a new pixel
 		Img::Pixel cpix;
+		uint rint, bint, gint;
 
-		//Multiplies red from both images and sets it back down
-
-		uint rint = inverter(1.0, avec[i].rint, bvec[i].rint);
+		//Ngl kinda just googled overlay blend formula and just went with it
+		if (bvec[i].rint > 127.5) {
+			rint = inverter(2.0, avec[i].rint, bvec[i].rint);
+		}
+		else {
+			rint = (uint)scale(((bvec[i].rint) / 127.5f) * avec[i].rint);
+		}
+		
+		if (bvec[i].bint > 127.5) {
+			bint = inverter(2.0, avec[i].bint, bvec[i].bint);
+		}
+		else {
+			bint = (uint)scale(((bvec[i].bint) / 127.5f)* avec[i].bint);
+		}
+		
+		if (bvec[i].gint > 127.5) {
+			gint = inverter(2.0, avec[i].gint, bvec[i].gint);
+		}
+		else {
+			gint = (uint)scale(((bvec[i].gint) / 127.5f) * avec[i].gint);
+		}
+	
 		uchar  rchar = Convertintchar(rint);
 		cpix.red = rchar;
-
-
-		uint bint = inverter(1.0, avec[i].bint, bvec[i].bint);
 		uchar  bchar = Convertintchar(bint);
 		cpix.blue = bchar;
-
-
-		uint gint = inverter(1.0, avec[i].gint, bvec[i].gint);
 		uchar  gchar = Convertintchar(gint);
 		cpix.green = gchar;
-
 
 		cvec.push_back(cpix);
 	}
@@ -568,25 +581,15 @@ Img flipper(Img& a) {
 	vector<Img::Pixel> cvec;
 
 	//Loops to set the new values
-	for (uint i = 0; i < avec.size(); i++) {
+	for (int i = (int) avec.size() - 1; i >= 0; i--) {
 		//Makes a new pixel
 		Img::Pixel cpix;
 
-		//Multiplies red from both images and sets it back down
-		int rint = avec[i].rint;
-		uchar  rchar = Convertintchar(pabs(rint));
-		cpix.red = rchar;
+		cpix.red = avec[i].red;
 
+		cpix.blue = avec[i].blue;
 
-		int bint = avec[i].bint;
-		uchar  bchar = Convertintchar(pabs(bint));
-		cpix.blue = bchar;
-
-
-		int gint = avec[i].gint;
-		uchar  gchar = Convertintchar(pabs(gint));
-		cpix.green = gchar;
-
+		cpix.green = avec[i].green;
 
 		cvec.push_back(cpix);
 	}
