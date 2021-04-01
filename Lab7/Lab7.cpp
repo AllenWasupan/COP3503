@@ -2,19 +2,51 @@
 //
 
 #include <iostream>
+#include <map>
+#include <random>
+#include <ctime>
+using namespace std;
+
+mt19937 random_mt;
+
+int Random(int min, int max)
+{
+	uniform_int_distribution<int> dist(min, max);
+	return dist(random_mt);
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	cout << "1. Random Numbers\n";
+	cout << "2. State Info\n";
+
+	int option;
+	cin >> option;
+
+	if (option == 1)
+	{
+		int randomSeed;
+		cout << "Random seed value: ";
+		cin >> randomSeed;
+		random_mt.seed(randomSeed);
+
+
+		cout << "Number of times to roll the die: ";
+		// user input
+
+		cout << "Number of sides on this die: ";
+		// user input
+
+		  // Roll Dice
+	}
+	else if (option == 2)
+	{
+		// Load the states
+
+		// Get input for option 1 (show all states) or 2 (do a search for a particular state)
+
+	}
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
