@@ -1,0 +1,14 @@
+﻿  Project3Minesweeper.cpp
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(99,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(99,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(117,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(117,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(127,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(127,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(136,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(136,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(145,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(145,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(154,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(154,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Project3Minesweeper.vcxproj -> D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\x64\Debug\Project3Minesweeper.exe

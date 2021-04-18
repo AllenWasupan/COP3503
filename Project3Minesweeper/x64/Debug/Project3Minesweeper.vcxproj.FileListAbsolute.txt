@@ -1,0 +1,2 @@
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\x64\Debug\Project3Minesweeper.exe
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\x64\Debug\Project3Minesweeper.pdb
