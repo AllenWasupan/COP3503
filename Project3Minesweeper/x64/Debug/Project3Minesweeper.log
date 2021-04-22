@@ -1,36 +1,38 @@
 ﻿  Project3Minesweeper.cpp
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Minesweep.h(195,30): warning C4018: '<': signed/unsigned mismatch
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(67,56): warning C4018: '<': signed/unsigned mismatch
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(107,56): warning C4018: '<': signed/unsigned mismatch
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(143,40): warning C4018: '<': signed/unsigned mismatch
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(145,25): warning C4804: '%': unsafe use of type 'bool' in operation
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(148,30): warning C4804: '>': unsafe use of type 'bool' in operation
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(196,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(196,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(200,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(200,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(214,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(214,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(266,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(266,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(274,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(274,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(292,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(292,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(302,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(302,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(311,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(311,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(321,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(321,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Minesweep.h(182,30): warning C4018: '<': signed/unsigned mismatch
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(69,56): warning C4018: '<': signed/unsigned mismatch
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(112,56): warning C4018: '<': signed/unsigned mismatch
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(153,40): warning C4018: '<': signed/unsigned mismatch
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(155,25): warning C4804: '%': unsafe use of type 'bool' in operation
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(158,30): warning C4804: '>': unsafe use of type 'bool' in operation
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(211,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(211,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(217,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(217,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(221,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(221,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(235,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(235,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(287,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(287,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(291,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(291,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(321,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(321,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(331,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(331,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(375,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(375,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(379,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(379,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(383,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(383,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(339,19): warning C4101: 'digy': unreferenced local variable
-D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(339,13): warning C4101: 'digx': unreferenced local variable
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(340,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(340,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(350,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(350,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(360,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(360,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(404,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(404,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(408,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(408,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(412,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(412,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(368,19): warning C4101: 'digy': unreferenced local variable
+D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\Project3Minesweeper.cpp(368,13): warning C4101: 'digx': unreferenced local variable
   Project3Minesweeper.vcxproj -> D:\Everything\H3K4RM4N\Programs\c++\Programming2\Project3Minesweeper\x64\Debug\Project3Minesweeper.exe

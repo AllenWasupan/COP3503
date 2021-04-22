@@ -33,10 +33,9 @@ int main() {
 
     int debugx, facelocationx, menuy, test1x, test2x, test3x, flagnum = 0;
     bool debugtoggle = false;
-    bool defeat = false;
+    bool defeat = false, win = false;
     string shownface = "images/face_happy.png";
-    cout << "False: " << false << endl;
-
+    int wincount = board.gettilecount() - board.getminecount();
     while (window.isOpen()) {
 
         Event event;
@@ -50,18 +49,21 @@ int main() {
             //If left clicked is pressed
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 Vector2i MousePosition = Mouse::getPosition(window);
-                cout << "X: " << MousePosition.x << " Y: " << MousePosition.y << endl;
+                //cout << "X: " << MousePosition.x << " Y: " << MousePosition.y << endl;
 
                 //If click in the menu
                 if ((MousePosition.y > board.getheight()-88) && (MousePosition.y < menuy + 64)) {
                     //If click on smiley face
                     if ((MousePosition.x > facelocationx) && (MousePosition.x < facelocationx + 64)) {
-                        board.setBoard();
+                        
+                        board.setBoard("boards/config.cfg");
                         shownface = "images/face_happy.png";
                         defeat = false;
+                        win = false;
+                        debugtoggle = false;
                     }
                     //If click debug
-                    if ((MousePosition.x > debugx) && (MousePosition.x < debugx + 64)) {
+                    if (((MousePosition.x > debugx) && (MousePosition.x < debugx + 64)) && ((defeat == false) && (win == false))) {
 
                         if (debugtoggle) {
                             for (unsigned int i = 0; i < board.gettilecount(); i++) {
@@ -78,15 +80,18 @@ int main() {
                     //If click test
                     if ((MousePosition.x > test1x) && (MousePosition.x < test1x + 64)) {
                         defeat = false;
-                        board.setTest("boards/testboard1.brd");
+                        board.setTest("boards/recursion_test.brd");
+                        debugtoggle = false;
                     }
                     if ((MousePosition.x > test2x) && (MousePosition.x < test2x + 64)) {
                         defeat = false;
                         board.setTest("boards/testboard2.brd");
+                        debugtoggle = false;
                     }
                     if ((MousePosition.x > test3x) && (MousePosition.x < test3x + 64)) {
                         defeat = false;
                         board.setTest("boards/testboard3.brd");
+                        debugtoggle = false;
                     }
                 }
                 //If click a tile
@@ -110,20 +115,25 @@ int main() {
                                 }
                             }
                         }
+                        else if (board.tilevec[tileselected].num == 0) {
+                            board.recursiveclick(tileselected);
+                            
+                        }
                     }
+
                 }
             }
             //If right click is pressed
-            if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && (defeat == false)) {
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && ((defeat == false) && (win == false))) {
                 Vector2i MousePosition = Mouse::getPosition(window);
-                cout << "X: " << MousePosition.x << " Y: " << MousePosition.y << endl;
+                //cout << "X: " << MousePosition.x << " Y: " << MousePosition.y << endl;
                 if ((MousePosition.y < menuy)) {
                     
                     int columnselected = MousePosition.x / 32;
                     int rowselected = MousePosition.y / 32;
 
                     int tileselected = columnselected + (rowselected * board.getColumn());
-                    cout << tileselected << endl;
+                    //cout << tileselected << endl;
 
                     if (board.tilevec[tileselected].revealed == false) {
                         if (board.tilevec[tileselected].flag) {
@@ -134,7 +144,6 @@ int main() {
                             board.tilevec[tileselected].flag = true;
                             flagnum++;
                         }
-                        
                     }
                 }
             }
@@ -151,10 +160,9 @@ int main() {
                     }
                 }
             }
-
         }
-        
-        //Iterates through displaying what's on the screen
+
+        //Resets the screen to draw
         window.clear(Color::White);
 
         //Drawing section
@@ -174,12 +182,17 @@ int main() {
         Sprite mine;
         mine.setTexture(minet);
 
-
+        //Flag
+        Texture flagtex;
+        flagtex.loadFromFile("images/flag.png");
+        Sprite flag;
+        flag.setTexture(flagtex);
         //Sets x and y and a counter
         int x = 0;
         int y = 0;
         int count = 0;
-       
+
+        wincount = board.gettilecount() - board.getminecount();
         //Loops for how many tiles there should be
         //Holds the logic for determining, which tile it should be and prints it
         for (int i = 0; i < board.gettilecount(); i++) {
@@ -195,7 +208,13 @@ int main() {
             if (board.tilevec[i].revealed) {
                 revealed.setPosition(x,y);
                 window.draw(revealed);
-                
+                if ((defeat == false) && (board.tilevec[i].isbomb == false)) {
+                    wincount -= 1;
+                }
+                if (board.tilevec[i].flag) {
+                    flag.setPosition(x, y);
+                    window.draw(flag);
+                }
                 if (board.tilevec[i].isbomb) {
                     mine.setPosition(x, y);
                     window.draw(mine);
@@ -215,7 +234,7 @@ int main() {
                     window.draw(sprite);
 
                 }
-
+                /*
                 //Recursive reveal
                 else {
                     if (board.tilevec[i].top) {
@@ -259,17 +278,13 @@ int main() {
                             board.tilevec[i + board.getColumn() + 1].revealed = true;
                         }
                     }
-                }
+                }*/
             }
             
             else {
                 hidden.setPosition(x,y);
                 window.draw(hidden);
                 if (board.tilevec[i].flag) {
-                    Texture flagtex;
-                    flagtex.loadFromFile("images/flag.png");
-                    Sprite flag;
-                    flag.setTexture(flagtex);
 
                     flag.setPosition(x, y);
                     window.draw(flag);
@@ -279,6 +294,20 @@ int main() {
            
             count++;
         }
+
+        //Victory Conditions
+        cout << wincount << endl;
+        if ((wincount == 0) && ((defeat == false) && (win == false))) {
+            shownface = "images/face_win.png";
+            for (unsigned int i = 0; i < board.tilevec.size(); i++) {
+                if (board.tilevec[i].isbomb) {
+                    board.tilevec[i].flag = true;
+                    flagnum++;
+                }
+            }
+            win = true;
+        }
+        
         //Display the bottom menu;
         //I have zero idea how to use it in class because it seems like i would have to redo everything, 
         //but even if I do I still don't understand how to use the window function outside of main and I can't find any info on that

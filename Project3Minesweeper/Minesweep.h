@@ -9,7 +9,7 @@ using namespace std;
 using namespace sf;
 
 
-class Tile {
+struct Tile {
 public:
 
 	bool revealed = false;
@@ -21,16 +21,6 @@ public:
 	bool flag = false;
 	bool flock = false;
 	int num = 0;
-	/*
-	int Num() {
-		int count = 0;
-		for (unsigned int i = 0; i < neighborvector.size(); i++) {
-			if (neighborvector[i].isbomb == true) {
-				count++;
-			}
-		}
-		return count;
-	}*/
 
 };
 
@@ -45,28 +35,7 @@ public:
 	vector<Tile> tilevec;
 	//Default Constructor, takes in the file name for the board info
 	Game(string input) {
-		string end = input.substr(input.length() - 4, input.length());
-
-		if (end == ".cfg") {
-			ifstream file(input);
-			string line;
-			vector<int> holder;
-
-			getline(file, line);
-			column = stoi(line);
-
-			getline(file, line);
-			row = stoi(line);
-
-			getline(file, line);
-			minecount = stoi(line);
-
-			tilecount = column * row;
-			width = column * 32;
-			height = row * 32 + 88;
-
-			setBoard();
-		}
+		setBoard(input);
 		
 	}
 
@@ -110,21 +79,9 @@ public:
 					tilevec[i].num++;
 				}
 			}
-			//Topleft
-			if (tilevec[i].top && tilevec[i].left) {
-				if (tilevec[i - column - 1].isbomb) {
-					tilevec[i].num++;
-				}
-			}
 			//Right
 			if (tilevec[i].right) {
 				if (tilevec[i + 1].isbomb) {
-					tilevec[i].num++;
-				}
-			}
-			//Topright
-			if (tilevec[i].top && tilevec[i].right) {
-				if (tilevec[i - column + 1].isbomb) {
 					tilevec[i].num++;
 				}
 			}
@@ -134,6 +91,20 @@ public:
 					tilevec[i].num++;
 				}
 			}
+			//Topleft
+			if (tilevec[i].top && tilevec[i].left) {
+				if (tilevec[i - column - 1].isbomb) {
+					tilevec[i].num++;
+				}
+			}
+			
+			//Topright
+			if (tilevec[i].top && tilevec[i].right) {
+				if (tilevec[i - column + 1].isbomb) {
+					tilevec[i].num++;
+				}
+			}
+			
 			//Downleft
 			if (tilevec[i].down && tilevec[i].left) {
 				if (tilevec[i + column - 1].isbomb) {
@@ -183,8 +154,24 @@ public:
 		cout << "Mines placed!" << endl;
 	}
 
-	void setBoard() {
-		
+	void setBoard(string input) {
+
+		ifstream file(input);
+		string line;
+		vector<int> holder;
+
+		getline(file, line);
+		column = stoi(line);
+
+		getline(file, line);
+		row = stoi(line);
+
+		getline(file, line);
+		minecount = stoi(line);
+
+		tilecount = column * row;
+		width = column * 32;
+		height = row * 32 + 88;
 		setTiles();
 
 		vector<int> minelocations;
@@ -248,6 +235,85 @@ public:
 		setNums();
 	}
 
+	void recursiveclick(int tileselected) {
+		if (tilevec[tileselected].num == 0) {
+			//Top
+			if (tilevec[tileselected].top) {
+				if (tilevec[tileselected - column].revealed == false) {
+					tilevec[tileselected - column].revealed = true;
+					if (tilevec[tileselected - column].num == 0) {
+						recursiveclick(tileselected - column);
+					}
+				}
+			}
+			//Left
+			if (tilevec[tileselected].left) {
+				if (tilevec[tileselected - 1].revealed == false) {
+					tilevec[tileselected - 1].revealed = true;
+					if (tilevec[tileselected - 1].num == 0) {
+						recursiveclick(tileselected - 1);
+					}
+				}
+			}
+			//Right
+			if (tilevec[tileselected].right) {
+				if (tilevec[tileselected + 1].revealed == false) {
+					tilevec[tileselected + 1].revealed = true;
+					if (tilevec[tileselected + 1].num == 0) {
+						recursiveclick(tileselected + 1);
+					}
+				}
+			}
+			//Down
+			if (tilevec[tileselected].down) {
+				if (tilevec[tileselected + column].revealed == false) {
+					tilevec[tileselected + column].revealed = true;
+					if (tilevec[tileselected + column].num == 0) {
+						recursiveclick(tileselected + column);
+					}
+				}
+			}
+			//Topleft
+			if (tilevec[tileselected].top && tilevec[tileselected].left) {
+				if (tilevec[tileselected - column - 1].revealed == false) {
+					tilevec[tileselected - column - 1].revealed = true;
+					if (tilevec[tileselected - column - 1].num == 0) {
+						recursiveclick(tileselected - column - 1);
+					}
+				}
+			}
+			//Topright
+			if (tilevec[tileselected].top && tilevec[tileselected].right) {
+				if (tilevec[tileselected - column + 1].revealed == false) {
+					tilevec[tileselected - column + 1].revealed = true;
+					if (tilevec[tileselected - column + 1].num == 0) {
+						recursiveclick(tileselected - column + 1);
+					}
+				}
+			}
+			//Downleft
+			if (tilevec[tileselected].down && tilevec[tileselected].left) {
+				if (tilevec[tileselected + column - 1].revealed == false) {
+					tilevec[tileselected + column - 1].revealed = true;
+					if (tilevec[tileselected + column - 1].num == 0) {
+						recursiveclick(tileselected + column - 1);
+					}
+				}
+			}
+			//Downright
+			if (tilevec[tileselected].down && tilevec[tileselected].right) {
+				if (tilevec[tileselected + column + 1].revealed == false) {
+					tilevec[tileselected + column + 1].revealed = true;
+					if (tilevec[tileselected + column + 1].num == 0) {
+						recursiveclick(tileselected + column + 1);
+					}
+				}
+			}
+		}
+	}
+
+
+
 	Tile getTile() {
 		return tile;
 	}
@@ -272,7 +338,5 @@ public:
 	int getColumn() {
 		return column;
 	}
-	bool isBorder(Tile tile) {
-
-	}
+	
 };
