@@ -1,2 +1,0 @@
-rule:
-	g++ o- project2.out src\Project2.cpp src\Img.h
